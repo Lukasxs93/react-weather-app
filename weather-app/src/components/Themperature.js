@@ -5,11 +5,11 @@ const Themperature = ({ weatherData }) => {
 	const [thermometer, setThermometer] = useState("");
 	useEffect(() => {
 		const handleThermometer = (weatherData) => {
-			if (weatherData.main.temp <= 10) {
+			if (weatherData.main.temp <= 5) {
 				setThermometer("thermometer empty");
-			} else if (weatherData.main.temp <= 20) {
+			} else if (weatherData.main.temp <= 18) {
 				setThermometer("thermometer half");
-			} else if (weatherData.main.temp <= 35) {
+			} else if (weatherData.main.temp <= 30) {
 				setThermometer("thermometer three quarters");
 			} else {
 				setThermometer("thermometer full");
