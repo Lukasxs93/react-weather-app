@@ -14,7 +14,10 @@ const Description = ({ weatherData }) => {
 			return <WiDaySunny style={{ fontSize: "100px", margin: "auto" }} />;
 		} else if (weatherData.weather[0].description === "few clouds") {
 			return <WiDayCloudyHigh style={{ fontSize: "100px", margin: "auto" }} />;
-		} else if (weatherData.weather[0].description === "scattered clouds") {
+		} else if (
+			weatherData.weather[0].description === "scattered clouds" ||
+			"overcast clouds"
+		) {
 			return <WiCloudy style={{ fontSize: "100px", margin: "auto" }} />;
 		} else if (weatherData.weather[0].description === "broken clouds") {
 			return <WiCloudy style={{ fontSize: "100px", margin: "auto" }} />;
