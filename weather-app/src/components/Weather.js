@@ -2,11 +2,11 @@ import moment from "moment";
 import { Card} from "semantic-ui-react";
 import Clock from "./Clock";
 import Themperature from "./Themperature";
-import Description from "./Description";
+
 
 import Humidity from "./Humidity";
 
-const CardExampleCard = ({ weatherData, background, setBackground }) => {
+const CardExampleCard = ({ weatherData, background}) => {
 	return (
 		<Card
 			style={{
