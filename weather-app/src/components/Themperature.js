@@ -5,11 +5,11 @@ const Themperature = ({ weatherData }) => {
 	const [thermometer, setThermometer] = useState("");
 	useEffect(() => {
 		const handleThermometer = (weatherData) => {
-			if (weatherData.main.temp <= 5) {
+			if (weatherData.current.temp_c <= 5) {
 				setThermometer("thermometer empty");
-			} else if (weatherData.main.temp <= 18) {
+			} else if (weatherData.current.temp_c <= 18) {
 				setThermometer("thermometer half");
-			} else if (weatherData.main.temp <= 30) {
+			} else if (weatherData.current.temp_c <= 30) {
 				setThermometer("thermometer three quarters");
 			} else {
 				setThermometer("thermometer full");
@@ -21,7 +21,7 @@ const Themperature = ({ weatherData }) => {
 		<Card.Meta>
 			<label>
 				<Icon name={thermometer} />
-				{weatherData.main.temp} &deg;C
+				{weatherData.current.temp_c} &deg;C
 			</label>
 		</Card.Meta>
 	);

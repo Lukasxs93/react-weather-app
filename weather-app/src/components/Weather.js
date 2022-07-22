@@ -1,15 +1,14 @@
 import moment from "moment";
-import { Card, Icon } from "semantic-ui-react";
+import { Card} from "semantic-ui-react";
 import Clock from "./Clock";
 import Themperature from "./Themperature";
 import Description from "./Description";
 
 import Humidity from "./Humidity";
 
-const CardExampleCard = ({ weatherData, background }) => {
+const CardExampleCard = ({ weatherData, background, setBackground }) => {
 	return (
 		<Card
-			centered
 			style={{
 				padding: "10px",
 				backgroundImage: `url(${background})`,
@@ -17,8 +16,14 @@ const CardExampleCard = ({ weatherData, background }) => {
 				borderRadius: "12px",
 			}}
 		>
-			<Description weatherData={weatherData} />
-			<h3>{weatherData.weather[0].description}</h3>
+			<h2 style={{ margin: "0px" }}>{weatherData.location.name}</h2>
+			<h3 style={{ margin: "0px" }}>{weatherData.location.country}</h3>
+			<img
+				src={weatherData.forecast.forecastday[0].day.condition.icon}
+				style={{ width: "80px", margin: "auto" }}
+			/>
+
+			<h4>{weatherData.forecast.forecastday[0].day.condition.text}</h4>
 			<Card.Content
 				style={{
 					backdropFilter: "blur(6px) saturate(100%)",
@@ -28,11 +33,12 @@ const CardExampleCard = ({ weatherData, background }) => {
 					border: " 1px solid rgba(209, 213, 219, 0.3)",
 				}}
 			>
-				<Card.Header className="header">{weatherData.name}</Card.Header>
+				<Card.Header className="header"></Card.Header>
+
 				<p className="dayData">
 					{moment().format("dddd")}, {moment().format("LL")}
 				</p>
-				<Clock />
+				<Clock weatherData={weatherData} />
 				<Themperature weatherData={weatherData} />
 
 				<Humidity weatherData={weatherData} />
@@ -47,14 +53,8 @@ const CardExampleCard = ({ weatherData, background }) => {
 					border: " 1px solid rgba(209, 213, 219, 0.3)",
 				}}
 			>
-				<p>
-					<Icon name="sun" />{" "}
-					{new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString("en-IN")}
-				</p>
-				<p>
-					<Icon name="moon" />
-					{new Date(weatherData.sys.sunset * 1000).toLocaleTimeString("en-IN")}
-				</p>
+				<p>{weatherData.forecast.forecastday[0].astro.sunrise}</p>
+				<p>{weatherData.forecast.forecastday[0].astro.sunset}</p>
 			</Card.Content>
 		</Card>
 	);

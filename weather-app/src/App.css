@@ -1,9 +1,22 @@
 .App {
+  width:80%;
+  margin:auto;
   text-align: center;
   height: 100vh;
   padding:30px ;
+  display:flex;
+  flex-direction: column;
+  gap:40px;
+ 
 }
 
+.weather_container{
+  display:flex;
+  align-items: baseline;
+  justify-content: center;
+  gap:30px;
+  flex-wrap: wrap;
+}
 
 
 
