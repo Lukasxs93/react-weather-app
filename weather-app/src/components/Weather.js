@@ -19,6 +19,7 @@ const CardExampleCard = ({ weatherData, background}) => {
 			<h2 style={{ margin: "0px" }}>{weatherData.location.name}</h2>
 			<h3 style={{ margin: "0px" }}>{weatherData.location.country}</h3>
 			<img
+			    alt="descriptive icon"
 				src={weatherData.forecast.forecastday[0].day.condition.icon}
 				style={{ width: "80px", margin: "auto" }}
 			/>
