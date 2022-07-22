@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { v4 as uuid } from "uuid";
 
-const apiKey = '';
+
 
 const UserInput=({data, setData,})=>{
     const[searched,setSearched]=useState('')
