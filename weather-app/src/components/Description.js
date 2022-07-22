@@ -9,19 +9,24 @@ import {
 } from "react-icons/wi";
 
 const Description = ({ weatherData }) => {
+
+ 
+
+
 	const handleDescription = (weatherData) => {
-		if (weatherData.weather[0].description === "clear sky") {
+		
+		if (weatherData.current.condition.text === "clear sky") {
 			return <WiDaySunny style={{ fontSize: "100px", margin: "auto" }} />;
-		} else if (weatherData.weather[0].description === "few clouds") {
+		} else if (weatherData.current.condition.text === "few clouds") {
 			return <WiDayCloudyHigh style={{ fontSize: "100px", margin: "auto" }} />;
 		} else if (
-			weatherData.weather[0].description === "scattered clouds" ||
+			weatherData.current.condition.text === "scattered clouds" ||
 			"overcast clouds"
 		) {
 			return <WiCloudy style={{ fontSize: "100px", margin: "auto" }} />;
-		} else if (weatherData.weather[0].description === "broken clouds") {
+		} else if (weatherData.current.condition.text === "broken clouds") {
 			return <WiCloudy style={{ fontSize: "100px", margin: "auto" }} />;
-		} else if (weatherData.weather[0].description === "shower rain") {
+		} else if (weatherData.current.condition.text === "shower rain") {
 			return <WiRain style={{ fontSize: "100px", margin: "auto" }} />;
 		} else {
 			return <WiAlien style={{ fontSize: "100px", margin: "auto" }} />;

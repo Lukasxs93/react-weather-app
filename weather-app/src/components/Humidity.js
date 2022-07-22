@@ -5,7 +5,7 @@ const Humidity = ({ weatherData }) => {
 		<Card.Meta>
 			<label>
 				<Icon name="theme" />
-				{weatherData.main.humidity} %{" "}
+				{weatherData.current.humidity} %{" "}
 			</label>
 		</Card.Meta>
 	);
