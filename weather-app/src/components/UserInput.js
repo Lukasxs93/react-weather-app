@@ -32,7 +32,7 @@ const UserInput=({data, setData,})=>{
     return(
         <form onSubmit={handleSubmit}>
             <input type={'text'} onChange={handleChange} value={searched}></input>
-            <input type={'submit'}></input>
+            <input type={'submit'} value={'Search'}></input>
         </form>
     )
 }
