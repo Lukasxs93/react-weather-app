@@ -31,7 +31,7 @@ const UserInput=({data, setData,})=>{
     }
     return(
         <form onSubmit={handleSubmit}>
-            <input type={'text'} onChange={handleChange} value={searched}></input>
+            <input type={'text'} onChange={handleChange} value={searched} required></input>
             <input type={'submit'} value={'Search'}></input>
         </form>
     )

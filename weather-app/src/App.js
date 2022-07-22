@@ -3,7 +3,7 @@ import React, {  useState } from "react";
 import Weather from "./components/Weather";
 import UserInput from "./components/UserInput";
 export default function App() {
-	const [data, setData] = useState([]);
+	const [data, setData] = useState('');
 	
     
 
@@ -19,8 +19,8 @@ export default function App() {
 			<div>
 				<UserInput data={data} setData={setData} />
 			</div>
-			{data =='' ? (
-				<p>search a city to find out the weather </p>
+			{data === '' ? (
+				<h2>search a city to find out the weather </h2>
 			) : (
 				<div className="weather_container">
 					{data.map((data) => (
