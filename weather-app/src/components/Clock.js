@@ -17,7 +17,7 @@ const Clock =({weatherData})=>{
       var now = new Date(new Date().getTime() - diff);       
         setClockState(now.toLocaleTimeString());
     },1000);
-  },[]);
+  },[diff]);
 
   return(
     <div className='clock'>Time: {clockState}</div>
