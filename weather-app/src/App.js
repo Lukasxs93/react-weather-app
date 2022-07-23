@@ -27,8 +27,9 @@ export default function App() {
 								style={{
 									position: "relative",
 									left: "120px",
-									top: "50px",
-									zIndex: "1",							
+									top: "35px",
+									zIndex: "1",
+																
 								}}
 							><IoTrashBin />
 							</button>

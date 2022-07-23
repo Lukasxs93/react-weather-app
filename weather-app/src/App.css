@@ -14,6 +14,7 @@
 
 .weather_container{
   display:flex;
+  
   align-items: baseline;
   justify-content: center;
   gap:30px;

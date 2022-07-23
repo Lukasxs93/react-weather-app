@@ -13,7 +13,7 @@ const UserInput=({data, setData,})=>{
 			)
 				.then((response) => response.json())
 				.then((weather) => {					
-					setData([...data, { ...weather, id: uuid() }]);
+					setData([{ ...weather, id: uuid() }, ...data]);
 					console.log(typeof data);
 				});
 		};
