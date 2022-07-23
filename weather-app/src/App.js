@@ -3,7 +3,11 @@ import React, {  useState } from "react";
 import Weather from "./components/Weather";
 import UserInput from "./components/UserInput";
 import { v4 as uuid } from "uuid";
-import { IoTrashBin } from "react-icons/io5";
+import IconButton from "@mui/material/IconButton";
+//import { IoTrashBin } from "react-icons/io5";
+import DeleteIcon from "@mui/icons-material/Delete";
+//import Button from "@mui/material/Button";
+
 export default function App() {
 	const [data, setData] = useState([]);
 
@@ -21,18 +25,15 @@ export default function App() {
 			) : (
 				<div className="weather_container">
 					{data.map((data) => (
-						<div key={uuid()}>
-							<button
+						<div key={uuid()}>							
+							<IconButton
+								className="delete-button"
+								color="error"
+								component="label"
 								onClick={() => handleDelete(data.id)}
-								style={{
-									position: "relative",
-									left: "120px",
-									top: "35px",
-									zIndex: "1",
-
-								}}
-							><IoTrashBin />
-							</button>
+							>
+								<DeleteIcon />
+							</IconButton>
 							<Weather
 								weatherData={data}
 								id={data.id}
