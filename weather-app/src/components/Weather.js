@@ -15,6 +15,8 @@ const CardExampleCard = ({ weatherData, background,}) => {
 				backgroundSize: "cover",
 				borderRadius: "12px",
 				margin: "auto",
+				
+				
 			}}
 		>
 			<h2 style={{ margin: "0px" }}>{weatherData.location.name}</h2>
@@ -22,7 +24,7 @@ const CardExampleCard = ({ weatherData, background,}) => {
 			<img
 				alt="descriptive icon"
 				src={weatherData.forecast.forecastday[0].day.condition.icon}
-				style={{ width: "80px", margin: "auto" }}
+				style={{ width: "80px", margin:'auto'}}
 			/>
 
 			<h4>{weatherData.forecast.forecastday[0].day.condition.text}</h4>

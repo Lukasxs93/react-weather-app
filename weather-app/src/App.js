@@ -16,8 +16,8 @@ export default function App() {
 			<div>
 				<UserInput data={data} setData={setData} />
 			</div>
-			{data === [] ? (
-				<h2>search a city to find out the weather </h2>
+			{data.length === 0 ? (
+				<h2>search a city and find out it's weather </h2>
 			) : (
 				<div className="weather_container">
 					{data.map((data) => (
@@ -29,7 +29,7 @@ export default function App() {
 									left: "120px",
 									top: "35px",
 									zIndex: "1",
-																
+
 								}}
 							><IoTrashBin />
 							</button>
