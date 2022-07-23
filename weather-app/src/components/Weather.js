@@ -2,11 +2,10 @@ import moment from "moment";
 import { Card} from "semantic-ui-react";
 import Clock from "./Clock";
 import Themperature from "./Themperature";
-
-
 import Humidity from "./Humidity";
 
-const CardExampleCard = ({ weatherData, background}) => {
+const CardExampleCard = ({ weatherData, background,}) => {
+	
 	return (
 		<Card
 			style={{
@@ -15,7 +14,7 @@ const CardExampleCard = ({ weatherData, background}) => {
 				backgroundSize: "cover",
 				borderRadius: "12px",
 			}}
-		>
+		>    
 			<h2 style={{ margin: "0px" }}>{weatherData.location.name}</h2>
 			<h3 style={{ margin: "0px" }}>{weatherData.location.country}</h3>
 			<img

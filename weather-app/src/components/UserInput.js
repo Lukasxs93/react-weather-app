@@ -12,10 +12,9 @@ const UserInput=({data, setData,})=>{
 				`https://api.weatherapi.com/v1/forecast.json?key=48d25501c94c4d9ca0f72200222606&q=${address}&days=1&aqi=yes&alerts=no`
 			)
 				.then((response) => response.json())
-				.then((weather) => {
-					console.log(weather);
+				.then((weather) => {					
 					setData([...data, { ...weather, id: uuid() }]);
-					
+					console.log(typeof data);
 				});
 		};
    
@@ -27,7 +26,8 @@ const UserInput=({data, setData,})=>{
         e.preventDefault();       
         getData(searched);
         setSearched('');
-        
+       let  isArr = Object.prototype.toString.call(data) === "[object Array]";
+       console.log(isArr);
     }
     return(
         <form onSubmit={handleSubmit}>
