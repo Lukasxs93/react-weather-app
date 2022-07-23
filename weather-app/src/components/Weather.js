@@ -6,6 +6,11 @@ import Humidity from "./Humidity";
 import { WiSunrise, WiSunset } from "react-icons/wi";
 
 const CardExampleCard = ({ weatherData, background,}) => {
+	 
+ const dateTime = weatherData.location.localtime.split(' ');
+ const dateSplit = dateTime[0].split('-');
+ 
+
 	
 	return (
 		<Card
@@ -39,9 +44,9 @@ const CardExampleCard = ({ weatherData, background,}) => {
 			>
 				<Card.Header className="header"></Card.Header>
 
-				<p className="dayData">
-					{moment().format("dddd")}, {moment().format("LL")}
-				</p>
+				<span className="dayData">
+					{dateSplit[2]}/{dateSplit[1]}/{dateSplit[0]}
+				</span>
 				<Clock weatherData={weatherData} />
 				<Themperature weatherData={weatherData} />
 
