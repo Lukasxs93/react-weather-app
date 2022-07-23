@@ -3,25 +3,24 @@ import { Card} from "semantic-ui-react";
 import Clock from "./Clock";
 import Themperature from "./Themperature";
 import Humidity from "./Humidity";
+import { WiSunrise, WiSunset } from "react-icons/wi";
 
 const CardExampleCard = ({ weatherData, background,}) => {
 	
 	return (
 		<Card
 			style={{
-				
 				padding: "10px",
 				backgroundImage: `url(${background})`,
 				backgroundSize: "cover",
 				borderRadius: "12px",
-				margin:'auto',
-				
+				margin: "auto",
 			}}
-		>    
+		>
 			<h2 style={{ margin: "0px" }}>{weatherData.location.name}</h2>
 			<h3 style={{ margin: "0px" }}>{weatherData.location.country}</h3>
 			<img
-			    alt="descriptive icon"
+				alt="descriptive icon"
 				src={weatherData.forecast.forecastday[0].day.condition.icon}
 				style={{ width: "80px", margin: "auto" }}
 			/>
@@ -56,8 +55,26 @@ const CardExampleCard = ({ weatherData, background,}) => {
 					border: " 1px solid rgba(209, 213, 219, 0.3)",
 				}}
 			>
-				<p>{weatherData.forecast.forecastday[0].astro.sunrise}</p>
-				<p>{weatherData.forecast.forecastday[0].astro.sunset}</p>
+				<div
+					style={{
+						display: "flex",
+						alignItems: "center",
+						justifyContent: "center",
+					}}
+				>
+					<WiSunrise style={{ fontSize: "20px" }} />
+					<span>{weatherData.forecast.forecastday[0].astro.sunrise}</span>
+				</div>
+				<div
+					style={{
+						display: "flex",
+						alignItems: "center",
+						justifyContent: "center",
+					}}
+				>
+					<WiSunset style={{ fontSize: "20px" }} />
+					<span>{weatherData.forecast.forecastday[0].astro.sunset}</span>
+				</div>
 			</Card.Content>
 		</Card>
 	);
