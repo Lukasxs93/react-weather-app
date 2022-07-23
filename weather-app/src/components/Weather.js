@@ -9,10 +9,13 @@ const CardExampleCard = ({ weatherData, background,}) => {
 	return (
 		<Card
 			style={{
+				
 				padding: "10px",
 				backgroundImage: `url(${background})`,
 				backgroundSize: "cover",
 				borderRadius: "12px",
+				margin:'auto',
+				
 			}}
 		>    
 			<h2 style={{ margin: "0px" }}>{weatherData.location.name}</h2>
