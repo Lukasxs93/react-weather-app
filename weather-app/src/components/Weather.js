@@ -1,4 +1,4 @@
-import moment from "moment";
+
 import { Card} from "semantic-ui-react";
 import Clock from "./Clock";
 import Themperature from "./Themperature";
