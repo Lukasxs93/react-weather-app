@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { v4 as uuid } from "uuid";
+import { Icon, Input } from "semantic-ui-react";
+import IconButton from "@mui/material/IconButton";
+import { ImSearch } from "react-icons/im";
 
 
 
@@ -29,12 +32,21 @@ const UserInput=({data, setData,})=>{
        let  isArr = Object.prototype.toString.call(data) === "[object Array]";
        console.log(isArr);
     }
-    return(
-        <form onSubmit={handleSubmit}>
-            <input type={'text'} onChange={handleChange} value={searched} required></input>
-            <input type={'submit'} value={'Search'} style={{marginLeft:'10px'}}></input>
-        </form>
-    )
+    return (
+			<form onSubmit={handleSubmit}>
+				<Input
+					icon
+					placeholder="Search..."
+					style={{ border: "2px solid #03045e", borderRadius: "5px" }}
+				>
+					<input onChange={handleChange} value={searched} required />
+				</Input>
+				<IconButton color="primary" component="label">
+					<input hidden type="submit" />
+					<ImSearch style={{ color: "#03045e"}} />
+				</IconButton>
+			</form>
+		);
 }
 
 export default UserInput;

@@ -17,33 +17,35 @@ export default function App() {
 
 	return (
 		<div className="App">
-			<div>
-				<UserInput data={data} setData={setData} />
-			</div>
-			{data.length === 0 ? (
-				<h2>search a city and find out it's weather </h2>
-			) : (
-				<div className="weather_container">
-					{data.map((data) => (
-						<div key={uuid()}>							
-							<IconButton
-								className="delete-button"
-								color="error"
-								component="label"
-								onClick={() => handleDelete(data.id)}
-							>
-								<DeleteIcon />
-							</IconButton>
-							<Weather
-								weatherData={data}
-								id={data.id}
-								setData={setData}
-								key={uuid()}
-							/>
-						</div>
-					))}
+			<div className="backGround">
+				<div>
+					<UserInput data={data} setData={setData} />
 				</div>
-			)}
+				{data.length === 0 ? (
+					<h2>search a city and find out it's weather </h2>
+				) : (
+					<div className="weather_container">
+						{data.map((data) => (
+							<div key={uuid()}>
+								<IconButton
+									className="delete-button"
+									color="error"
+									component="label"
+									onClick={() => handleDelete(data.id)}
+								>
+									<DeleteIcon />
+								</IconButton>
+								<Weather
+									weatherData={data}
+									id={data.id}
+									setData={setData}
+									key={uuid()}
+								/>
+							</div>
+						))}
+					</div>
+				)}
+			</div>
 		</div>
 	);
 }

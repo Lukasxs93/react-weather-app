@@ -1,48 +1,45 @@
-.App {
-  width:100%;
-  margin:auto;
+.App {  
+  width: 100%;
+  margin: auto;
   text-align: center;
   height: 100vh;
-  padding:30px ;
-  display:flex;
+  padding: 30px;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  gap:40px;
-  
- 
-}
-
-.weather_container{
-  display:flex;
-  
+  gap: 40px;
+  background-image: url('https://images.unsplash.com/photo-1496450681664-3df85efbd29f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80'); 
+ }
+.weather_container {
+  display: flex;
   align-items: baseline;
   justify-content: center;
-  gap:30px;
-  flex-wrap: wrap;
+  gap: 30px;
+  flex-wrap: wrap
 }
-.card-container{
-  padding: 10px;    
-  background-size: cover;
+.card-container {
+  padding: 10px;
   border-radius: 12px;
-  margin: "auto"
+  margin: "auto";
+  color: #03045e
 }
-.card-content .extra{
-  backdrop-filter: blur(6px) saturate(100%);
-  -webkit-backdrop-filter: blur(6px) saturate(100%);
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 12px 12px 0 0;
-  border:  1px solid rgba(209, 213, 219, 0.3);
+
+.ui.card,
+.ui.cards>.card {
+  backdrop-filter: blur(6px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(10px) saturate(50%) !important;
+    background-color: rgba(32, 114, 221, 0.27) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(209, 213, 219, 0.3) !important;
 }
-.descriptive-icon{
+.descriptive-icon {
   width: 80px;
-  margin:auto;
+  margin: auto
 }
-.delete-button{
+
+.delete-button {
   position: relative;
   left: 120px;
   top: 40px;
-  z-index: 1;
-  
+  z-index: 1
 }
-
-
