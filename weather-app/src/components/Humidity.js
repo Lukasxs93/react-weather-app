@@ -16,7 +16,7 @@ const Humidity = ({ weatherData }) => {
 	}
 	return (
 		<Card.Meta>
-			<label>
+			<label style={{ color: "rgba(3, 4, 94, 0.5)" }}>
 				{handleHumidity(weatherData)}
 				{weatherData.current.humidity} %{" "}
 			</label>

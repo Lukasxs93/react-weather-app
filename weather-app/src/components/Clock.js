@@ -19,9 +19,11 @@ const Clock =({weatherData})=>{
     },1000);
   },[diff]);
 
-  return(
-    <div className='clock'>Time: {clockState}</div>
-  );
+  return (
+		<div className='clock-container'>
+			<div className="clock">Time: {clockState}</div>
+		</div>
+	);
 }
 
 export default Clock;

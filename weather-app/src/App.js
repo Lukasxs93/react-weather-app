@@ -4,7 +4,7 @@ import Weather from "./components/Weather";
 import UserInput from "./components/UserInput";
 import { v4 as uuid } from "uuid";
 import IconButton from "@mui/material/IconButton";
-//import { IoTrashBin } from "react-icons/io5";
+
 import DeleteIcon from "@mui/icons-material/Delete";
 //import Button from "@mui/material/Button";
 
@@ -12,6 +12,7 @@ export default function App() {
 	const [data, setData] = useState([]);
 
 	const handleDelete=(id)=>{
+		    
 			setData(data.filter(data=> data.id !== id));	
 	}
 
@@ -29,12 +30,12 @@ export default function App() {
 							<div key={uuid()}>
 								<IconButton
 									className="delete-button"
-									color="error"
+									style={{ color: "rgba(3, 4, 94, 0.2)" }}
 									component="label"
 									onClick={() => handleDelete(data.id)}
 								>
 									<DeleteIcon />
-								</IconButton>
+								</IconButton >
 								<Weather
 									weatherData={data}
 									id={data.id}
