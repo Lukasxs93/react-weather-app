@@ -19,7 +19,7 @@ const Themperature = ({ weatherData }) => {
 	});
 	return (
 		<Card.Meta>
-			<label>
+			<label style={{ color: "rgba(3, 4, 94, 0.5)"}}>
 				<Icon name={thermometer} />
 				{weatherData.current.temp_c} &deg;C
 			</label>
