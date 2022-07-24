@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { v4 as uuid } from "uuid";
-import { Icon, Input } from "semantic-ui-react";
+import {  Input } from "semantic-ui-react";
 import IconButton from "@mui/material/IconButton";
 import { ImSearch } from "react-icons/im";
 
