@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-const Clock =({weatherData})=>{
+  const Clock =({weatherData})=>{
   const  [clockState, setClockState] = useState('');
   const localTimeString = weatherData.location.localtime;
   const parts = localTimeString.split(' ');
