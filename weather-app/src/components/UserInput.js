@@ -7,20 +7,30 @@ import { ImSearch } from "react-icons/im";
 
 
 
-const UserInput=({data, setData,})=>{
+const UserInput=({data, setData,alert})=>{
     const[searched,setSearched]=useState('')
-    console.log(data);
+   
    
 
     const getData = (address) => {
 			fetch(
 				`https://api.weatherapi.com/v1/forecast.json?key=48d25501c94c4d9ca0f72200222606&q=${address}&days=1&aqi=yes&alerts=no`
-			)
+			).catch((e)=>{
+					console.error(e);
+					setData(...data);
+					
+				})
 				.then((response) => response.json())
-				.then((weather) => {					
-					setData([{ ...weather, id: uuid() }, ...data]);
-					console.log(typeof data);
-				});
+				.then((weather) => {
+					if(weather.error){
+					
+						alert.show("wrong city");
+						
+						return 
+					}else{				
+					setData([{ ...weather, id: uuid() }, ...data]);	
+					}				
+				})
 		};
    
     const handleChange = (e) => {
@@ -30,9 +40,7 @@ const UserInput=({data, setData,})=>{
     const handleSubmit=(e)=>{
         e.preventDefault();       
         getData(searched);
-        setSearched('');
-       let  isArr = Object.prototype.toString.call(data) === "[object Array]";
-       console.log(isArr);
+        setSearched('');       
     }
     return (
 			<form onSubmit={handleSubmit}>

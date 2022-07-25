@@ -38,6 +38,7 @@ const CardExampleCard = ({ weatherData}) => {
 				<Themperature weatherData={weatherData} className="side-data" />
 				<Humidity weatherData={weatherData} className="side-data" />
 			</Card.Content>
+			
 			<Card.Content extra>
 				<div
 					style={{

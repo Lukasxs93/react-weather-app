@@ -4,13 +4,13 @@ import Weather from "./components/Weather";
 import UserInput from "./components/UserInput";
 import { v4 as uuid } from "uuid";
 import IconButton from "@mui/material/IconButton";
-
 import DeleteIcon from "@mui/icons-material/Delete";
+import { useAlert } from "react-alert";
 //import Button from "@mui/material/Button";
 
 export default function App() {
 	const [data, setData] = useState([]);
-
+    const alert = useAlert();
 	const handleDelete=(id)=>{
 		    
 			setData(data.filter(data=> data.id !== id));	
@@ -20,7 +20,7 @@ export default function App() {
 		<div className="App">
 			<div className="backGround">
 				<div>
-					<UserInput data={data} setData={setData} />
+					<UserInput data={data} setData={setData} alert={alert} />
 				</div>
 				{data.length === 0 ? (
 					<h2>search a city and find out it's weather </h2>
