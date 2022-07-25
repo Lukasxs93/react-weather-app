@@ -14,17 +14,12 @@ const CardExampleCard = ({ weatherData}) => {
 
 	
 	return (
-		<Card
-			className="card-container"
-			style={{
-				padding: "10px",
-				backgroundSize: "cover",
-				borderRadius: "12px",
-				margin: "auto",
-			}}
-		>
-			<h2 style={{ margin: "0px" }}>{weatherData.location.name}</h2>
-			<h3 style={{ margin: "0px" }}>{weatherData.location.country}</h3>
+		<Card className="card-container">
+			<div>
+				<h2 style={{ margin: "0px" }}>{weatherData.location.name}</h2>
+				<h3 style={{ margin: "0px" }}>{weatherData.location.country}</h3>
+			</div>
+
 			<img
 				className="descriptive-icon"
 				alt="descriptive icon"
@@ -39,7 +34,7 @@ const CardExampleCard = ({ weatherData}) => {
 				</span>
 				<Clock weatherData={weatherData} />
 			</Card.Content>
-			<Card.Content style={{display:'flex', justifyContent:'space-around'}}>
+			<Card.Content style={{ display: "flex", justifyContent: "space-around" }}>
 				<Themperature weatherData={weatherData} className="side-data" />
 				<Humidity weatherData={weatherData} className="side-data" />
 			</Card.Content>

@@ -16,7 +16,7 @@ const Humidity = ({ weatherData }) => {
 	}
 	return (
 		<Card.Meta
-			style={{ display: "flex", flexDirection: "column", textAlign: "center" }}
+			style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
 		>
 			<GaugeChart
 				nrOfLevels={25}

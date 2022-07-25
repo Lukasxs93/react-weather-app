@@ -13,11 +13,12 @@ const Clock =({weatherData})=>{
   var diff = new Date().getTime() - dt.getTime();
   
   useEffect(()=>{
-    setInterval(()=>{ 
-      var now = new Date(new Date().getTime() - diff);       
-        setClockState(now.toLocaleTimeString());
-    },1000);
-  },[diff]);
+		setInterval(() => {
+			var now = new Date(new Date().getTime() - diff);
+			setClockState(now.toLocaleTimeString());
+		}, 1000);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	},[]);
 
   return (
 		<div className='clock-container'>
