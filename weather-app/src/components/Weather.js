@@ -4,6 +4,7 @@ import Clock from "./Clock";
 import Themperature from "./Themperature";
 import Humidity from "./Humidity";
 import { WiSunrise, WiSunset } from "react-icons/wi";
+import GaugeChart from "react-gauge-chart";
 
 const CardExampleCard = ({ weatherData}) => {
 	 
@@ -37,6 +38,8 @@ const CardExampleCard = ({ weatherData}) => {
 					{dateSplit[2]}/{dateSplit[1]}/{dateSplit[0]}
 				</span>
 				<Clock weatherData={weatherData} />
+			</Card.Content>
+			<Card.Content style={{display:'flex', justifyContent:'space-around'}}>
 				<Themperature weatherData={weatherData} className="side-data" />
 				<Humidity weatherData={weatherData} className="side-data" />
 			</Card.Content>

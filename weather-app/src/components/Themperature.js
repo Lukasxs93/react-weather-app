@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Card, Icon } from "semantic-ui-react";
-
+import GaugeChart from "react-gauge-chart";
 const Themperature = ({ weatherData }) => {
 	const [thermometer, setThermometer] = useState("");
 	useEffect(() => {
@@ -18,8 +18,16 @@ const Themperature = ({ weatherData }) => {
 		handleThermometer(weatherData);
 	});
 	return (
-		<Card.Meta>
-			<label style={{ color: "rgba(3, 4, 94, 0.5)"}}>
+		<Card.Meta
+			style={{ display: "flex", flexDirection: "column", textAlign:'center' }}
+		>
+			<GaugeChart
+				nrOfLevels={10}
+				percent={weatherData.current.temp_c/ 50}
+				style={{ width: "60%" }}
+				hideText={true}
+			/>
+			<label style={{ color: "rgba(3, 4, 94, 0.5)" }}>
 				<Icon name={thermometer} />
 				{weatherData.current.temp_c} &deg;C
 			</label>

@@ -6,9 +6,11 @@ import { ImSearch } from "react-icons/im";
 
 
 
+
 const UserInput=({data, setData,})=>{
     const[searched,setSearched]=useState('')
-
+    console.log(data);
+   
 
     const getData = (address) => {
 			fetch(

@@ -1,7 +1,7 @@
 
 import { Card} from "semantic-ui-react";
 import { BsDropletHalf, BsDroplet, BsDropletFill } from "react-icons/bs";
-
+import GaugeChart from "react-gauge-chart";
 const Humidity = ({ weatherData }) => {
 	
 	const handleHumidity=(weatherData)=>{
@@ -15,7 +15,16 @@ const Humidity = ({ weatherData }) => {
 		
 	}
 	return (
-		<Card.Meta>
+		<Card.Meta
+			style={{ display: "flex", flexDirection: "column", textAlign: "center" }}
+		>
+			<GaugeChart
+				nrOfLevels={25}
+				percent={weatherData.current.humidity / 100}
+				style={{ width: "60%" }}
+				hideText={true}
+				colors={["rgba(232, 249, 252,0.5)", "rgba(3, 4, 94, 0.5)"]}
+			/>
 			<label style={{ color: "rgba(3, 4, 94, 0.5)" }}>
 				{handleHumidity(weatherData)}
 				{weatherData.current.humidity} %{" "}
