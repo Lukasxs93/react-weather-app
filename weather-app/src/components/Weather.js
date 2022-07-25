@@ -4,7 +4,7 @@ import Clock from "./Clock";
 import Themperature from "./Themperature";
 import Humidity from "./Humidity";
 import { WiSunrise, WiSunset } from "react-icons/wi";
-import GaugeChart from "react-gauge-chart";
+
 
 const CardExampleCard = ({ weatherData}) => {
 	 
