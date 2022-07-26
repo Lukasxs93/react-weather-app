@@ -16,6 +16,7 @@
     "react": "^18.2.0",
     "react-alert": "^7.0.3",
     "react-alert-template-basic": "^1.0.2",
+    "react-alert-template-mui": "^1.0.7",
     "react-compass": "^0.1.0",
     "react-dom": "^18.2.0",
     "react-gauge-chart": "^0.4.0",

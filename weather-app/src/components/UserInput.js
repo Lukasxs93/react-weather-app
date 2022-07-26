@@ -24,7 +24,7 @@ const UserInput=({data, setData,alert})=>{
 				.then((weather) => {
 					if(weather.error){
 					
-						alert.show("wrong city");
+						alert.show(`${searched} is not a valid city`);
 						
 						return 
 					}else{				
