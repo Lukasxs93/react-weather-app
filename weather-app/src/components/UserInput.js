@@ -4,8 +4,8 @@ import { v4 as uuid } from "uuid";
 
 
 const UserInput=({data, setData,})=>{
-    const[searched,setSearched]=useState('')
-
+    const[searched,setSearched]=useState('');
+    const[cities, setCities] = useState([]);
 
     const getData = (address) => {
 			fetch(
@@ -24,7 +24,8 @@ const UserInput=({data, setData,})=>{
             
 		};
     const handleSubmit=(e)=>{
-        e.preventDefault();       
+        e.preventDefault(); 
+        setCities([searched, ...cities]);
         getData(searched);
         setSearched('');
         
