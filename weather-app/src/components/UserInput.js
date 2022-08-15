@@ -7,9 +7,9 @@ import { ImSearch } from "react-icons/im";
 
 
 
-const UserInput=({data, setData,alert})=>{
-    const[searched,setSearched]=useState('')
-   
+const UserInput=({data, setData,alert, cityList, setCityList})=>{
+    const[searched,setSearched]=useState('');
+    
    
 
     const getData = (address) => {
@@ -28,7 +28,9 @@ const UserInput=({data, setData,alert})=>{
 						
 						return 
 					}else{				
-					setData([{ ...weather, id: uuid() }, ...data]);	
+					setData([{ ...weather, id: uuid() }, ...data]);
+					console.log(weather);
+					setCityList([{ name: weather.location.name, id: uuid() }, ...cityList]);	
 					}				
 				})
 		};
@@ -39,7 +41,7 @@ const UserInput=({data, setData,alert})=>{
 		};
     const handleSubmit=(e)=>{
         e.preventDefault();       
-        getData(searched);
+        getData(searched);		
         setSearched('');       
     }
     return (
